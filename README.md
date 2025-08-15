@@ -34,33 +34,29 @@
   ### Для Frontend:
 - [Node.js 14+](https://nodejs.org/)
 - npm 6+ (обычно идет с Node.js)
-- Bower (для управления frontend-зависимостями):
-  ```sh
-  npm install -g bower
-  ```
   
-  # 🚀 Запуск проекта
-  # Backend
-   1. Клонируйте репозиторий:
-  ```sh
-  git clone https://github.com/yourusername/ExpenseTrackerApp.git
-  cd ExpenseTrackerApp/Backend
-  ```
+# 🚀 Запуск проекта
+# Backend
+  1. Клонируйте репозиторий:
+```sh
+git clone https://github.com/yourusername/ExpenseTrackerApp.git
+cd ExpenseTrackerApp/Backend
+```
 
-  2. Настройте подключение к БД в appsettings.json:
-  ```sh
-    "ConnectionStrings": {
-        "ExpenseTracker_DbContext": "User ID=postgres;Password=postgres;Host=localhost;Port=5432;Database=ExpenseTrackerDB;"
-    }
-  ```
-  3. Примените миграции
-  ```sh
-  dotnet ef database update -s .\ExpenseTracker.API\ -p .\ExpenseTracker.DataBase\
-  ```
-  4. Запустите сервер:
-  ```sh
-  dotnet run --project .\ExpenseTracker.API\
-  ```
+2. Настройте подключение к БД в appsettings.json:
+```sh
+  "ConnectionStrings": {
+  "ExpenseTracker_DbContext": "User ID=postgres;Password=postgres;Host=localhost;Port=5432;Database=ExpenseTrackerDB;"
+  }
+```
+3. Примените миграции
+```sh
+dotnet ef database update -s .\ExpenseTracker.API\ -p .\ExpenseTracker.DataBase\
+```
+4. Запустите сервер:
+```sh
+dotnet run --project .\ExpenseTracker.API\
+```
 
 # Frontend:
 1. Перейдите в папку фронтенда:
@@ -85,3 +81,4 @@ npm start
 🔄 **Двойная сортировка** - Гибкая сортировка расходов по сумме или по дате
 
 📅 **Автогруппировка по месяцам** - Умное распределение трат по месяцам для удобного анализа
+
