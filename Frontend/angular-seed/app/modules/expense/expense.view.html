@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="modules/expense/styles.css">
+<link href="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.css" rel="stylesheet">
+
+<md-card class="md-whiteframe-22dp md-round expense-card" ng-class="{'edit-mode': vm.isEditMode}"
+    style="border-radius: 20px; width: 100%;">
+
+    <!-- Основное содержимое карточки -->
+    <div class="card-content">
+        <md-card-header style="padding: 0; margin-left: 24px;">
+            <h2 style="margin-top: 16px; margin-bottom: 8px;">{{vm.recordData.description}}</h2>
+        </md-card-header>
+        <md-card-content style="padding: 0; margin-left: 32px; color: gray;">
+            Дата: {{ vm.recordData.expenseDate | date:'dd.MM.yyyy' }}
+        </md-card-content>
+        <md-card-footer
+            style="display: flex; justify-content: space-between; align-items: center; margin-left: 8px; margin-top: 12px;">
+            <h2>{{vm.recordData.amount | number}}₽</h2>
+            <md-card-actions>
+                <button class="update-custom-btn" ng-click="vm.toggleEditMode()">
+                    {{vm.isEditMode ? 'Отмена' : 'Изменить'}}
+                </button>
+                <button class="delete-custom-btn" ng-click="vm.deleteRecord()">Удалить</button>
+            </md-card-actions>
+        </md-card-footer>
+    </div>
+
+    <!-- Форма редактирования -->
+    <div class="edit-form" ng-if="vm.isEditMode">
+        <form name="expenseForm" novalidate ng-submit="vm.submitForm()">
+
+            <div class="form-group" ng-class="{'has-error': vm.errors.description}">
+                <label>Описание:</label>
+                <input type="text" ng-model="vm.editedRecord.description" ng-change="vm.onFieldChange('description')"
+                    required>
+                <div class="error-message" ng-if="vm.errors.description">
+                    {{vm.errors.description}}
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error': vm.errors.amount}">
+                <label>Сумма:</label>
+                <input type="number" ng-model="vm.editedRecord.amount" ng-change="vm.onFieldChange('amount')" required>
+                <div class="error-message" ng-if="vm.errors.amount">
+                    {{vm.errors.amount}}
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{'has-error': vm.errors.expenseDate}">
+                <label>Дата:</label>
+                <input type="date" ng-model="vm.editedRecord.expenseDateInput" ng-change="vm.validate('expenseDate')">
+                <div class="error-message" ng-if="vm.errors.expenseDate">
+                    {{vm.errors.expenseDate}}
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="save-custom-btn" ng-disabled="vm.formTouched && vm.isFormInvalid()">
+                    Сохранить
+                </button>
+            </div>
+        </form>
+    </div>
+</md-card>

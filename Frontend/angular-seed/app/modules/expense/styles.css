@@ -1,0 +1,122 @@
+/*Стили для кнопки Изменения*/
+.update-custom-btn {
+  border-radius: 8px;
+  background: #d3a134;
+  color: white;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.update-custom-btn:hover {
+  background: #f4c862;
+}
+
+.update-custom-btn:active {
+  background-color: #b5892c;
+}
+
+/*Стили для кнопки Удаления*/
+.delete-custom-btn {
+  border-radius: 8px;
+  background: #d33434;
+  color: white;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.delete-custom-btn:hover {
+  background: #f46262;
+}
+
+.delete-custom-btn:active {
+  background-color: #b42e2e;
+}
+
+/*Стили для формы изменения записи*/
+.edit-form {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.4s ease;
+  padding: 0 24px;
+  overflow: hidden;
+}
+
+.edit-mode .edit-form {
+  max-height: 100%;
+  opacity: 1;
+  padding: 16px 24px;
+  margin-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.edit-form-group {
+  margin-bottom: 16px;
+}
+
+.edit-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.edit-form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.has-error input {
+  border-color: #f44336;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.has-error input {
+  border-color: #f44336;
+  background-color: #fff9f9;
+}
+
+
+/*Стили для кнопки Сохранения изменений*/
+.save-custom-btn {
+  border-radius: 8px;
+  background: #cccccc;
+  color: white;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.save-custom-btn:hover {
+  background: #62f46e;
+}
+
+.save-custom-btn:active {
+  background-color: #2eb43e;
+}
+
+.save-custom-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.save-custom-btn:enabled {
+  background-color: #39d334;
+  cursor: pointer;
+}

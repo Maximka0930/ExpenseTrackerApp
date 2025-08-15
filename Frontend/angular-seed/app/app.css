@@ -1,0 +1,191 @@
+/*Стили для отображения записей в стиле Masonry*/
+.container {
+  display: flex;
+  padding: 20px;
+  padding-top: 0;
+  margin: 2%;
+  margin-top: 0;
+}
+
+.columns-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+beautiful-record {
+  break-inside: avoid;
+  width: 100%;
+}
+
+beautiful-record:hover {
+  transform: scale(1.02);
+}
+
+/*Стили для кнопки Добавить*/
+.add-custom-btn {
+  border-radius: 8px;
+  background: #39d334;
+  color: white;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.add-custom-btn:hover {
+  background: #62f46e;
+}
+
+.add-custom-btn:active {
+  background-color: #2eb43e;
+}
+
+/*Стили для кнопкок сортировки*/
+.sort-buttons {
+  display: flex;
+  gap: 12px;
+  margin: 2%;
+}
+
+.sort-button {
+  padding: 10px 20px;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  border: none;
+  font-size: 16px;
+}
+
+.sort-button.active-date {
+  background: #42a5f5;
+  color: white;
+}
+
+.sort-button.active-amount {
+  background: #bb66b1;
+  color: white;
+}
+
+.sort-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/*Модальная работа окна Добавления новой записи*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.form-group {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.form-group label input {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+
+/*Стили для отображения ошибок*/
+.has-error input {
+  border-color: #ff3860;
+}
+
+.error-text {
+  color: #ff3860;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/*Стили для отображения диаграммы*/
+.monthly-chart-diagram {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-height: 70vh;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 4vh;
+}
+
+#monthlyStatsChart {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 300px;
+  max-height: 70vh;
+}
+
+.app-footer {
+  background: linear-gradient(135deg, #4a5568, #1a202c);
+  color: white;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.copyright {
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.app-name {
+  font-weight: 600;
+  color: #f6ad55;
+  text-shadow: 0 0 8px rgba(246, 173, 85, 0.3);
+}

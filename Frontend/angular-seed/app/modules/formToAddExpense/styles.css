@@ -1,0 +1,62 @@
+/* Основные стили формы */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+}
+
+/* Стили для полей с ошибками */
+.has-error input {
+    border-color: #ff3860;
+    box-shadow: 0 0 0 1px #ff3860;
+}
+
+/* Стили для сообщений об ошибках */
+.error-message {
+    color: #ff3860;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/*Стили для кнопки Добавления записи*/
+.add-custom-btn-in-form  {
+    background-color: #cccccc !important;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: not-allowed;
+    transition: background-color 0.3s;
+}
+
+.add-custom-btn-in-form:not(:disabled) {
+    background-color: #4CAF50 !important;
+    cursor: pointer;
+}
+
+.disabled-btn {
+    background-color: #cccccc !important;
+    cursor: not-allowed !important;
+}
+
+
+/*Стили для отображения полей ввода*/
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

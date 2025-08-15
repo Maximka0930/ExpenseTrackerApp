@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="modules/formToAddExpense/styles.css">
+
+<div ng-if="formVm.isVisible">
+    <div class="modal-overlay" ng-click="formVm.onClose()">
+        <div class="modal-content" ng-click="$event.stopPropagation()">
+            <h2>Добавление записи</h2>
+            <form name="expenseForm" novalidate>
+
+                <div class="form-group" ng-class="{'has-error': formVm.errors.description}">
+                    <label>Описание:</label>
+                    <input type="text" placeholder="Новая запись" ng-model="formVm.newRecord.description"
+                        ng-change="formVm.validate('description')" required autofocus>
+                    <div class="error-message" ng-if="formVm.errors.description">
+                        {{formVm.errors.description}}
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error': formVm.errors.amount}">
+                    <label>Сумма:</label>
+                    <input type="number" ng-model="formVm.newRecord.amount" ng-change="formVm.validate('amount')"
+                        required>
+                    <div class="error-message" ng-if="formVm.errors.amount">
+                        {{formVm.errors.amount}}
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error': formVm.errors.expenseDate}">
+                    <label>Дата:</label>
+                    <input type="date" ng-model="formVm.newRecord.expenseDate"
+                        ng-change="formVm.validate('expenseDate')">
+                    <div class="error-message" ng-if="formVm.errors.expenseDate">
+                        {{formVm.errors.expenseDate}}
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="add-custom-btn-in-form" type="button" ng-click="formVm.submit()"
+                        ng-disabled="formVm.isFormInvalid()">
+                        Добавить
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
