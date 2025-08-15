@@ -28,9 +28,10 @@
 - [.NET 6 SDK](https://dotnet.microsoft.com/download)
 - [PostgreSQL 14+](https://www.postgresql.org/download/) (или Docker-контейнер)
 - [Entity Framework Core CLI tools](https://docs.microsoft.com/ef/core/cli/dotnet):
-  ```sh
-  dotnet tool install --global dotnet-ef
-  ```
+  
+```sh
+dotnet tool install --global dotnet-ef
+```
   ### Для Frontend:
 - [Node.js 14+](https://nodejs.org/)
 - npm 6+ (обычно идет с Node.js)
@@ -81,4 +82,5 @@ npm start
 🔄 **Двойная сортировка** - Гибкая сортировка расходов по сумме или по дате
 
 📅 **Автогруппировка по месяцам** - Умное распределение трат по месяцам для удобного анализа
+
 
